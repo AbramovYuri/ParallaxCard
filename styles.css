@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: 'Cinzel', serif;
+}
+
+header{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header-animation{
+    width: 100vw;
+    border-bottom: 4px solid black;
+}
+
+.slogan{
+    pointer-events: none;
+    z-index: 4;
+    position: absolute;
+    top:20%;
+    left:50%;
+    transform: translate(-50%,0);
+    margin: 0 auto;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px #0a0a0a;
+}
+
+
+.card-box{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40vh;
+    cursor: pointer;
+}
+
+.card{
+    position: relative;
+    transition: .3s;
+    overflow: hidden;
+    width: 25vw;
+    border: 2px solid black;
+}
+
+.card-image{
+    position: absolute;
+    height: 180%;
+}
+
+
+
+.card-header{
+    position: absolute;
+    top:2px;
+    left: 20px;
+    font-size: 40px;
+    color: #fff;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px #0a0a0a;
+    white-space: nowrap;
+}
+
+.card:hover{
+    transition: .3s;
+    width: 40vw;
+    transform: scale(1.1);
+    z-index: 3;
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+.parallax-section {
+    position: relative;
+    height: calc(100vh);
+
+}
+
+.parallax-image{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.parallax-section-content{
+    z-index: 2;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
+.parallax-section-content-header{
+    position: absolute;
+    left:40px;
+    top:140px;
+    color: white;
+    font-size: 50px;
+    text-shadow: 1px 1px 1px #0a0a0a;
+    text-transform: uppercase;
+    padding: 10px;
+    border: 2px solid white;
+    background-color: rgba(50,50,50,.6);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+}
+.parallax-section-content-info-right{
+    position: absolute;
+    top:300px;
+    right:5%;
+    width: 40%;
+    color: white;
+    font-size: 30px;
+    text-shadow: 1px 1px 1px #0a0a0a;
+    padding: 10px;
+    border: 2px solid white;
+    background-color: rgba(50,50,50,.6);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    text-align: justify;
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+.leaving-content{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 700px;
+    border-top: 4px solid black;
+    border-bottom: 2px solid black;
+}
+
+.leaving-content-image{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+}
+
+.leaving-content-left{
+    transition: 1s;
+    position: absolute;
+    left:200%;
+    top:20%;
+    color: white;
+    font-size: 50px;
+    text-shadow: 1px 1px 1px #0a0a0a;
+    text-transform: uppercase;
+    padding: 10px;
+    border: 2px solid white;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: rgba(50,50,50,.6);
+    white-space: nowrap;
+}
+
+.leaving-content-right{
+    transition: 1s;
+    position: absolute;
+    right:200%;
+    bottom:20%;
+    color: white;
+    font-size: 50px;
+    text-shadow: 1px 1px 1px #0a0a0a;
+    text-transform: uppercase;
+    padding: 10px;
+    border: 2px solid white;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: rgba(50,50,50,.6);
+    white-space: nowrap;
+}
+
+.animate-content{
+    width: 100vw;
+    height: 100%;
+}
+
+footer{
+    width: 100vw;
+    height: 800px;
+    background: #000;
+
+}
