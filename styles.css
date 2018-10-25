@@ -46,7 +46,7 @@ header{
     transition: .3s;
     overflow: hidden;
     width: 25%;
-    border: 2px solid black;
+    border: 2px solid #222;
 }
 
 .card-image{
@@ -70,7 +70,7 @@ header{
 .card:hover{
     transition: .3s;
     width: 40vw;
-    transform: scale(1.1);
+    transform: scale(1.05);
     z-index: 3;
 }
 
@@ -79,7 +79,7 @@ header{
 .parallax-section {
     position: relative;
     width: 100%;
-    height: 800px;
+    height: 700px;
     overflow: hidden;
 }
 
@@ -90,7 +90,6 @@ header{
 }
 
 .parallax-section-content{
-    z-index: 2;
     position: absolute;
     top:0;
     left:0;
