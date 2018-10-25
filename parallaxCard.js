@@ -3,18 +3,16 @@ window.scrollTo(0, 0);
 let parallaxCard = document.querySelector('.card');
 let clientWindowHeight = document.documentElement.clientHeight;
 let cardImage = document.querySelectorAll('.card-image');
-let topImagePosition = 0;
-
-let topLeavingImagePosition = clientWindowHeight/-.9;
-let parallaxSection = document.querySelectorAll('.parallax-image');
-let topParallaxContentPosition = clientWindowHeight/2;
+let parallaxImage = document.querySelectorAll('.parallax-image');
+let parallaxSection = document.querySelectorAll('.parallax-section');
 let leavingContentDiv = document.querySelectorAll('.leaving-content');
 let leavingContentImage = document.querySelectorAll('.leaving-content-image');
 let yOffset;
 let yOffsetOld = 0;
+let topParallaxImagePosition = -1 * parallaxSection[0].offsetHeight;
+let topImagePosition = -1 * parallaxCard.offsetHeight;
+let topLeavingImagePosition = -1 * leavingContentDiv[0].offsetHeight;
 
-console.log(topParallaxContentPosition);
-parallaxSection[0].style.top = topParallaxContentPosition + "px";
 document.windowOnLoad = parallax();
 
 addEventListener("scroll", parallax);
@@ -31,22 +29,25 @@ function parallax() {
 
 function parallaxCardFunc() {
 
-    if ((parallaxCard.getBoundingClientRect().top - yOffset) < 0 || parallaxCard.getBoundingClientRect().top < clientWindowHeight) {
-        topImagePosition = topImagePosition - (yOffset - yOffsetOld) / 6;
-    }
+    if (parallaxCard.getBoundingClientRect().top < clientWindowHeight) {
+        topImagePosition = topImagePosition - (yOffset - yOffsetOld) / -3;
 
-    for (let i = 0; i < cardImage.length; i++) {
 
-        cardImage[i].style.top = topImagePosition + "px";
+        console.log(parallaxCard.getBoundingClientRect());
+
+        for (let i = 0; i < cardImage.length; i++) {
+
+            cardImage[i].style.top = topImagePosition + "px";
+        }
     }
 }
-
 function parallaxSectionFunc() {
 
     for (let i = 0; i < parallaxSection.length; i++) {
 
-        if ((parallaxSection[i].getBoundingClientRect().top - yOffset) < 0 || parallaxSection[i].getBoundingClientRect().top < clientWindowHeight) {
-            parallaxSection[i].style.top = topParallaxContentPosition + (yOffset/-2) + "px";
+        if (parallaxSection[i].getBoundingClientRect().top < clientWindowHeight) {
+            topParallaxImagePosition = topParallaxImagePosition - (yOffset - yOffsetOld)/-2;
+            parallaxImage[i].style.top = topParallaxImagePosition + "px";
         }
     }
 }
@@ -55,7 +56,7 @@ function leavingContent() {
 
     for (let i =0; i<leavingContentImage.length;i++){
 
-        if (leavingContentImage[i].getBoundingClientRect().top - yOffset<0 || leavingContentImage[i].getBoundingClientRect().top < clientWindowHeight){
+        if (leavingContentImage[i].getBoundingClientRect().top < clientWindowHeight){
 
             topLeavingImagePosition = topLeavingImagePosition - (yOffset - yOffsetOld)/-2;
             leavingContentImage[i].style.top = topLeavingImagePosition + "px";
