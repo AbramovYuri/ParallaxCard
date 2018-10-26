@@ -65,13 +65,7 @@ function resize() {
     yOffsetOld = 0;
 
     parallaxCardBox.style.height = document.documentElement.clientWidth/4.5 + "px";
-
-    for (let i = 0; i< cardImage.length; i++){
-        cardImage[i].style.top = -1 * (cardImage[i].offsetHeight - parallaxCard.offsetHeight) + "px";
-        console.log(-1 * parallaxCard.offsetHeight);
-    }
-
-    topImagePosition = -1 * parallaxCard.offsetHeight;
+    topImagePosition = -1 * (cardImage[0].offsetHeight - parallaxCard.offsetHeight);
 
     for (let i = 0; i < parallaxSection.length; i++) {
         parallaxSection[i].style.height = parallaxSection[i].offsetWidth/2.7 + "px";
