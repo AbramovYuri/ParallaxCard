@@ -1,15 +1,16 @@
 let parallaxCard = document.querySelector('.card');
-let clientWindowHeight = document.documentElement.clientHeight;
+let parallaxCardBox = document.querySelector('.card-box');
 let cardImage = document.querySelectorAll('.card-image');
+let clientWindowHeight = document.documentElement.clientHeight;
 let parallaxImage = document.querySelectorAll('.parallax-image');
 let parallaxSection = document.querySelectorAll('.parallax-section');
 let leavingContentDiv = document.querySelectorAll('.leaving-content');
 let yOffset;
 let yOffsetOld = 0;
-let topImagePosition = -1 * parallaxCard.offsetHeight;
+let topImagePosition;
 let topParallaxImagePosition = [];
 
-document.windowOnLoad = resize();
+resize();
 addEventListener("resize", resize);
 addEventListener("scroll", parallax);
 
@@ -26,7 +27,7 @@ function parallax() {
 function parallaxCardFunc() {
 
     if (parallaxCard.getBoundingClientRect().top < clientWindowHeight) {
-        topImagePosition = topImagePosition - (yOffset - yOffsetOld) / -3;
+        topImagePosition = topImagePosition - (yOffset - yOffsetOld) / -4;
 
         for (let i = 0; i < cardImage.length; i++) {
 
@@ -40,7 +41,7 @@ function parallaxSectionFunc() {
     for (let i = 0; i < parallaxSection.length; i++) {
 
         if (parallaxSection[i].getBoundingClientRect().top < clientWindowHeight) {
-            topParallaxImagePosition[i] = topParallaxImagePosition[i] - (yOffset - yOffsetOld) / -2;
+            topParallaxImagePosition[i] = topParallaxImagePosition[i] - (yOffset - yOffsetOld) / -4;
             parallaxImage[i].style.top = topParallaxImagePosition[i] + "px";
         }
     }
@@ -62,11 +63,19 @@ function leavingContent() {
 function resize() {
     window.scrollTo(0, 0);
     yOffsetOld = 0;
+
+    parallaxCardBox.style.height = document.documentElement.clientWidth/4.5 + "px";
+
+    for (let i = 0; i< cardImage.length; i++){
+        cardImage[i].style.top = -1 * (cardImage[i].offsetHeight - parallaxCard.offsetHeight) + "px";
+        console.log(-1 * parallaxCard.offsetHeight);
+    }
+
     topImagePosition = -1 * parallaxCard.offsetHeight;
 
     for (let i = 0; i < parallaxSection.length; i++) {
         parallaxSection[i].style.height = parallaxSection[i].offsetWidth/2.7 + "px";
-        topParallaxImagePosition[i] = -1 * parallaxSection[i].offsetHeight;
+        topParallaxImagePosition[i] = -1* (parallaxImage[i].offsetHeight - parallaxSection[i].offsetHeight);
         parallaxImage[i].style.top = topParallaxImagePosition[i] + "px";
     }
 }

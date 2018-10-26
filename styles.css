@@ -9,7 +9,6 @@ body {
 header{
     position: relative;
     width: 100vw;
-    height: 100vh;
 }
 
 .header-animation{
@@ -52,7 +51,7 @@ header{
 
 .card-image{
     position: absolute;
-    height: 180%;
+    height: 200%;
 }
 
 
