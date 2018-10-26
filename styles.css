@@ -32,6 +32,7 @@ header{
     text-shadow: 1px 1px 1px #0a0a0a;
 }
 
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 .card-box{
     display: flex;
@@ -135,13 +136,6 @@ header{
     height: 700px;
     border-top: 4px solid black;
     border-bottom: 2px solid black;
-}
-
-.leaving-content-image{
-    position: absolute;
-    top:0;
-    left:0;
-    width: 100%;
 }
 
 .leaving-content-left{
